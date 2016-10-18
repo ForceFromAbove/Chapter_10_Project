@@ -1,17 +1,20 @@
 package Info_911;
 
 public class W911 extends nine_one_one {                        // Handles wireless 911 calls
-    private Double Latitude;
-    private Double Longitude;
+    private Double Latitude[] = new Double[100];
+    private Double Longitude[] = new Double[100];
+
+    private int lat_Count = 0;
+    private int long_Count = 0;
 
     private String reverse_geo_code = "Dale's House";
     private int reliability = 75;
 
-    public double getLatitude() {                               // Get Latitude
+    public Double[] getLatitude() {                               // Get Latitude
         return Latitude;
     }
 
-    public double getLongitude() {                              // Get Longitude
+    public Double[] getLongitude() {                              // Get Longitude
         return Longitude;
     }
 
@@ -24,11 +27,13 @@ public class W911 extends nine_one_one {                        // Handles wirel
     }
 
     public void setLatitude(double Latitude) {                  // Set latitude
-        this.Latitude = Latitude;
+        this.Latitude[lat_Count] = Latitude;
+        ++lat_Count;
     }
 
     public void setLongitude(double Longitude) {                // Set longitude
-        this.Longitude = Longitude;
+        this.Longitude[long_Count] = Longitude;
+        ++long_Count;
     }
 
     public void setReliability(int reliability) {               // Set reliability
@@ -42,5 +47,5 @@ public class W911 extends nine_one_one {                        // Handles wirel
 
 
 /**
- * Created by aaronewing on 10/6/2016. *
+ * Created by aaronewing on 10/17/2016. *
  */
